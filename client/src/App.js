@@ -10,19 +10,19 @@ import FetchUser from './components/FetchUser';
 import ProtectedRoute from './components/ProtectedRoute'
 
 const App = () => (
-<div>
+<Fragment>
   <Navbar />
   <FetchUser>
     <Container>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <ProtectedRoute exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route component={NoMatch} />
       </Switch>
     </Container>
   </FetchUser>
-</div>
+</Fragment>
 )
 
 export default App;
